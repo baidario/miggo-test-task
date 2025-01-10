@@ -11,6 +11,7 @@ function App() {
   } = useISSLocation();
 
   useEffect(() => {
+    loadCoordinates();
     setInterval(loadCoordinates, 10 * 1000);
   }, [loadCoordinates]);
 
