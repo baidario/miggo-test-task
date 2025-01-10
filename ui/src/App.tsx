@@ -3,6 +3,8 @@ import { Map } from './Components/Map';
 import { FlightInfo } from './Components/FlightInfo';
 import './App.css';
 import { useISSLocation } from './hooks/useISSLocation';
+import { Station } from './Components/Station';
+import { StationPath } from './Components/StationPath';
 
 function App() {
   const {
@@ -17,8 +19,17 @@ function App() {
 
   return (
     <>
-      <Map ISSCoordinates={coordinates} />
-      <FlightInfo />
+      <Map>
+        {coordinates && (
+          <>
+            <StationPath {...coordinates} />
+            <Station {...coordinates} />
+          </>
+        )}
+      </Map>
+      <div className="flight-info-container">
+        {coordinates && <FlightInfo {...coordinates} />}
+      </div>
     </>
   );
 }

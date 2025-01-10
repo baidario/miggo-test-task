@@ -19,3 +19,19 @@ body,
 #map {
   flex-grow: 1;
 }
+
+.flight-info-container {
+  width: 300px;
+}
+
+table {
+  width: 100%;
+  border-style: solid;
+}
+
+td {
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #000;
+}
