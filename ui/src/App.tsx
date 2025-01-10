@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { Map } from './Components/Map';
 import { FlightInfo } from './Components/FlightInfo';
 import './App.css';
+import { useISSLocation } from './hooks/useISSLocation';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const {
+    coordinates,
+    loadCoordinates,
+  } = useISSLocation();
+
+  useEffect(() => {
+    setInterval(loadCoordinates, 10 * 1000);
+  }, [loadCoordinates]);
 
   return (
     <>
-      <Map />
+      <Map ISSCoordinates={coordinates} />
       <FlightInfo />
     </>
   );
