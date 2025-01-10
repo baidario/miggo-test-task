@@ -15,7 +15,7 @@
 #### Fetching IIS location information
 
 <details>
- <summary><code>GET</code> <code><b>/station</b></code> <code>(gets all in-memory stub & proxy configs)</code></summary>
+ <summary><code>GET</code> <code><b>/station</b></code></summary>
 
 ##### Parameters
 
