@@ -9,11 +9,9 @@ export const useISSLocation = () => {
       const response = await fetch('http://localhost:3000/station');
 
       if (response.ok) {
-        const json = await response.json() as {
-          iss_position: Coordinates;
-        };
+        const json = await response.json() as Coordinates;
 
-        setCoordinates(json.iss_position);
+        setCoordinates(json);
       }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -14,7 +14,9 @@ app.get('/station', async (req, res) => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    res.json(await response.json());
+    const json = await response.json();
+
+    res.json({ ...json.iss_position });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
